@@ -1,0 +1,20 @@
+import { LedgerModel } from './BasicDetailsApp.Ledger.LedgerModel';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'basic-details-ledger',
+  templateUrl: './BasicDetailsApp.Ledger.view.html',
+  styleUrls: ['./BasicDetailsApp.Ledger.component.css']
+})
+export class LedgerComponent {
+  title = 'Tex ????';
+  LedgerModelObj: LedgerModel = new LedgerModel();
+  LedgerModelsObj: Array<LedgerModel> = new Array<LedgerModel>();
+  Add() {
+    this.LedgerModelsObj.push(this.LedgerModelObj);
+    this.Reset();
+  }
+  Reset() {
+    this.LedgerModelObj = new LedgerModel();
+  }
+}

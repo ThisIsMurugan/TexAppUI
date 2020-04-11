@@ -1,0 +1,22 @@
+<h4>Customer Entry Screen</h4>
+Ledger Id: <input [(ngModel)]="LedgerModelObj.LedgerId" type="text" /><br>
+Ledger Name: <input [(ngModel)]="LedgerModelObj.LedgerName" type="text" /><br>
+Ledger Code: <input [(ngModel)]="LedgerModelObj.LedgerCode" type="text"/><br>
+<input (click)="Add()" type="button" value="Add"/> <br>
+{{LedgerModelObj.LedgerId}} <br>
+{{LedgerModelObj.LedgerName}} <br>
+{{LedgerModelObj.LedgerCode}} <br>
+<h4>List of Customers</h4>
+<table>
+  <tr>
+    <th>Ledger Id</th>
+    <th>Ledger Name</th>
+    <th>Ledger Code</th>
+  </tr>
+  <tr *ngFor="let ledger of LedgerModelsObj">
+    <td>{{ledger.LedgerId}}</td>
+    <td>{{ledger.LedgerName}}</td>
+    <td>{{ledger.LedgerCode}}</td>
+  </tr>
+</table>
+

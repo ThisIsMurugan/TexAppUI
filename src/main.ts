@@ -3,11 +3,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
 import { environment } from './environments/environment';
-import { TextileAppModule } from './BasicDetailsApp/Ledger/BasicDetailsApp.Ledger.module';
-
+import { HomeModule } from './Home/Home.HomeModule';
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(TextileAppModule)
+platformBrowserDynamic().bootstrapModule(HomeModule)
   .catch(err => console.error(err));

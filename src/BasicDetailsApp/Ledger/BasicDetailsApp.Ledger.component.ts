@@ -2,7 +2,6 @@ import { LedgerModel } from './BasicDetailsApp.Ledger.LedgerModel';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-basic-details-ledger',
   templateUrl: './BasicDetailsApp.Ledger.view.html',
   styleUrls: ['./BasicDetailsApp.Ledger.component.css']
 })

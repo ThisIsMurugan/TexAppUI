@@ -13,16 +13,8 @@ Ledger Code: <input formControlName="LedgerCodeControl" [(ngModel)]="LedgerModel
 <div [hidden]="!(HasValidationError('required','LedgerCodeControl'))">Ledger Code is Required</div>
 <div [hidden]="!(HasValidationError('pattern','LedgerCodeControl'))">Ledger Code is not in correct format. ex-1234</div>
 <h4>List of Customers</h4>
-<table>
-  <tr>
-    <th>Ledger Id</th>
-    <th>Ledger Name</th>
-    <th>Ledger Code</th>
-  </tr>
-  <tr *ngFor="let ledger of LedgerModelsObj">
-    <td>{{ledger.LedgerId}}</td>
-    <td>{{ledger.LedgerName}}</td>
-    <td>{{ledger.LedgerCode}}</td>
-  </tr>
-</table>
-
+<app-grid-ui
+    [grid-columns]="[{'colName':'LedgerId'},{'colName':'LedgerName'},{'colName':'LedgerCode'}]"
+    [grid-data]="LedgerModelsObj"
+    (grid-selected-data)="SelectedLedger($event)">
+</app-grid-ui>

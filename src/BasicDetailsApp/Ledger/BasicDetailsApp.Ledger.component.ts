@@ -31,4 +31,7 @@ export class LedgerComponent {
             .controls[controlName]
             .hasError(typeofValidator);
   }
+  SelectedLedger(_selected: LedgerModel){
+    this.LedgerModelObj = _selected;
+  }
 }

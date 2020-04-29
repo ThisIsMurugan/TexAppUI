@@ -1,11 +1,17 @@
+import { BaseLogger } from './../../Utility/Utility.Logger';
 import { LedgerModel } from './BasicDetailsApp.Ledger.LedgerModel';
-import { Component } from '@angular/core';
+import { Component,Injector } from '@angular/core';
 
 @Component({
   templateUrl: './BasicDetailsApp.Ledger.view.html',
   styleUrls: ['./BasicDetailsApp.Ledger.component.css']
 })
 export class LedgerComponent {
+  LoggerObj: BaseLogger = null;
+  constructor(_injecter: Injector) {
+    this.LoggerObj = _injecter.get('1');
+    this.LoggerObj.Log();
+  }
   title = 'Tex ????';
   LedgerModelObj: LedgerModel = new LedgerModel();
   LedgerModelsObj: Array<LedgerModel> = new Array<LedgerModel>();

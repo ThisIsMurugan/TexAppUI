@@ -1,11 +1,17 @@
 <h4>Customer Entry Screen</h4>
-Ledger Id: <input [(ngModel)]="LedgerModelObj.LedgerId" type="text" /><br>
-Ledger Name: <input [(ngModel)]="LedgerModelObj.LedgerName" type="text" /><br>
-Ledger Code: <input [(ngModel)]="LedgerModelObj.LedgerCode" type="text"/><br>
-<input (click)="Add()" type="button" value="Add"/> <br>
+<form [formGroup]="LedgerModelObj.formLedgerGorup">
+Ledger Id: <input  [(ngModel)]="LedgerModelObj.LedgerId" type="text" [ngModelOptions]="{standalone: true}"/><br>
+Ledger Name: <input formControlName="LedgerNameControl" [(ngModel)]="LedgerModelObj.LedgerName" type="text" /><br>
+Ledger Code: <input formControlName="LedgerCodeControl" [(ngModel)]="LedgerModelObj.LedgerCode" type="text"/><br>
+
+<input [disabled]="!(LedgerModelObj.formLedgerGorup.valid)" (click)="Add()" type="button" value="Add"/> <br>
+</form>
 {{LedgerModelObj.LedgerId}} <br>
 {{LedgerModelObj.LedgerName}} <br>
 {{LedgerModelObj.LedgerCode}} <br>
+<div [hidden]="!(HasValidationError('required','LedgerNameControl'))">Ledger Name is Required</div>
+<div [hidden]="!(HasValidationError('required','LedgerCodeControl'))">Ledger Code is Required</div>
+<div [hidden]="!(HasValidationError('pattern','LedgerCodeControl'))">Ledger Code is not in correct format. ex-1234</div>
 <h4>List of Customers</h4>
 <table>
   <tr>

@@ -18,4 +18,11 @@ export class LedgerComponent {
   Reset() {
     this.LedgerModelObj = new LedgerModel();
   }
+  HasValidationError(typeofValidator: string,
+                     controlName: string)
+                      : boolean {
+    return this.LedgerModelObj.formLedgerGorup
+            .controls[controlName]
+            .hasError(typeofValidator);
+  }
 }

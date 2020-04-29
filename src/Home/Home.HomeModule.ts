@@ -3,9 +3,6 @@ import { MasterPageComponent } from './Home.MasterPageComponent';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HomeRoutingModule } from 'src/Routing/Home-HomeRouting.module';
-import { BasicDetailsLedgerModule } from 'src/BasicDetailsApp/Ledger/BasicDetailsApp.Ledger.module';
-import { LedgerReportModule } from 'src/Reports/Ledgers/Reports.LedgersModule';
-import { LedgerTransactionModule } from 'src/Transaction/Ledgers/Transaction.LedgerModule';
 
 @NgModule({
   declarations: [
@@ -14,10 +11,7 @@ import { LedgerTransactionModule } from 'src/Transaction/Ledgers/Transaction.Led
   ],
   imports: [
     HomeRoutingModule,
-    BrowserModule,
-    BasicDetailsLedgerModule,
-    LedgerReportModule,
-    LedgerTransactionModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [MasterPageComponent]

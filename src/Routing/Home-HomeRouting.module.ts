@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LedgerReportComponent } from './../Reports/Ledgers/Reports.LedgersComponent';
-import { LedgerTransactionComponent } from './../Transaction/Ledgers/Transaction.LedgerTransactionComponent';
-import { LedgerComponent } from './../BasicDetailsApp/Ledger/BasicDetailsApp.Ledger.component';
 import { HomePageComponent } from './../Home/Home.HomePageComponent';
 
 
 const routes: Routes = [
   {path: 'Home', component: HomePageComponent},
-  {path: 'BasicDetails-Ledger', component: LedgerComponent},
-  {path: 'Transaction-Ledger', component: LedgerTransactionComponent},
-  {path: 'Reports-Ledger', component: LedgerReportComponent},
+  {path: 'BasicDetails-Ledger',
+    loadChildren: '../BasicDetailsApp/Ledger/BasicDetailsApp.Ledger.module#BasicDetailsLedgerModule'},
+  {path: 'Transaction-Ledger',
+    loadChildren: '../Transaction/Ledgers/Transaction.LedgerModule#LedgerTransactionModule'},
+  {path: 'Reports-Ledger',
+    loadChildren: '../Reports/Ledgers/Reports.LedgersModule#LedgerReportModule'},
   {path: '', component: HomePageComponent}
 ];
 

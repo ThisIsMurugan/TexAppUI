@@ -1,0 +1,34 @@
+{
+  "ledgers": [
+    {
+      "LedgerId": "1",
+      "LedgerName": "Murugan",
+      "LedgerCode": "1001",
+      "id": 1
+    },
+    {
+      "LedgerId": "2",
+      "LedgerName": "Sow",
+      "LedgerCode": "1002",
+      "id": 2
+    },
+    {
+      "LedgerId": "3",
+      "LedgerName": "Test",
+      "LedgerCode": "1003",
+      "id": 3
+    },
+    {
+      "LedgerId": "4",
+      "LedgerName": "Teat",
+      "LedgerCode": "1004",
+      "id": 4
+    },
+    {
+      "LedgerId": "11",
+      "LedgerName": "Yuei",
+      "LedgerCode": "1212",
+      "id": 5
+    }
+  ]
+}

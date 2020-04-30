@@ -4,7 +4,8 @@ Ledger Id: <input  [(ngModel)]="LedgerModelObj.LedgerId" type="text" [ngModelOpt
 Ledger Name: <input formControlName="LedgerNameControl" [(ngModel)]="LedgerModelObj.LedgerName" type="text" /><br>
 Ledger Code: <input formControlName="LedgerCodeControl" [(ngModel)]="LedgerModelObj.LedgerCode" type="text"/><br>
 
-<input [disabled]="!(LedgerModelObj.formLedgerGorup.valid)" (click)="Add()" type="button" value="Add"/> <br>
+<input [disabled]="!(LedgerModelObj.formLedgerGorup.valid)" (click)="Add()" type="button" value="Add"/>
+<input [disabled]="!(LedgerModelObj.formLedgerGorup.valid)" (click)="SendToServer()" type="button" value="Send to server"/> <br>
 </form>
 {{LedgerModelObj.LedgerId}} <br>
 {{LedgerModelObj.LedgerName}} <br>

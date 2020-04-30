@@ -1,3 +1,4 @@
+import { MyInterceptor } from './../../Utility/App.Interceptor';
 import { GridComponent } from './../../Utility/App.GridComponent';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -6,6 +7,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { LedgerComponent } from './BasicDetailsApp.Ledger.component';
 import {BasicDetailsLedgerRoute} from '../../Routing/BasicDetails.LedgerRouting.module';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     LedgerComponent, GridComponent
@@ -14,9 +18,13 @@ import {BasicDetailsLedgerRoute} from '../../Routing/BasicDetails.LedgerRouting.
     RouterModule.forChild(BasicDetailsLedgerRoute),
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}
+  ],
   bootstrap: [LedgerComponent]
 })
 export class BasicDetailsLedgerModule { }
